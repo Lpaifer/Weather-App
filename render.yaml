@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: django-weather-app
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn core.asgi:application -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: core.settings
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: false

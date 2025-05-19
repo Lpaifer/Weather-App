@@ -38,8 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'weather',
+    'weather'
 ]
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "weather-cache",
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
