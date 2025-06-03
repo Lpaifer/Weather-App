@@ -22,9 +22,10 @@ async def weather_view(request):
     # Initialize weather_data and error_message
     weather_data = {}
     error_message = None
+    limits = httpx.Limits(max_connections=100, max_keepalive_connections=20)
 
     try:
-        async with httpx.AsyncClient() as client:
+        async with httpx.AsyncClient(limits=limits) as client:
             response = await client.get(url, timeout=10)
             if response.status_code == 200:
                 data = response.json()
