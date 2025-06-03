@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-kzbs0%-5_$szam@s4_ka0vbs7!7opxn=b4pyyhyq@ocd$qc0&s
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'weather-app-lp7g.onrender.com'
+    'weather-app-lp7g.onrender.com',
+    'weather-app-p0to.onrender.com'
 ]
 
 
